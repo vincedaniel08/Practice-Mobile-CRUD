@@ -1,21 +1,110 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+import Menu from "./src/screens/Menu";
+import Login from "./src/screens/Login";
+import Registration from "./src/screens/Registration";
+import ForgotPassword from "./src/screens/ForgotPassword";
+import Tabs from "./src/routes/router";
+
+const Stack = createStackNavigator();
+
 export default function App() {
+
+  function StackNav(){
+
+
+
+    return(
+  
+      <Stack.Navigator initialRouteName= "Menu">
+  
+        <Stack.Screen
+            name="  "
+            component={Menu}
+            options={{
+              title: '',
+              headerStyle: {
+                backgroundColor: 'black',     
+                borderBottomColor: 'black'
+                
+              },
+              headerTintColor: '#fff',
+            }}
+          />
+  
+  
+  
+        <Stack.Screen
+            name="Sign In"
+            component={Login}
+            options={{
+              title: 'Sign In',
+              headerStyle: {
+                backgroundColor: 'black',
+                borderBottomColor: 'black'
+              },
+              headerTintColor: '#fff',
+            }}
+          />
+        <Stack.Screen
+            name="Sign Up"
+            component={Registration}
+            options={{
+              title: 'Sign Up',
+              headerStyle: {
+                backgroundColor: 'black',
+                borderBottomColor: 'black'
+              },
+              headerTintColor: '#fff',
+            }}
+          />
+  
+          <Stack.Screen
+            name="Forgot Password"
+            component={ForgotPassword}
+            options={{
+              title: 'Forgot Password',
+              headerStyle: {
+                backgroundColor: 'black',
+                borderBottomColor: 'black'
+              },
+              headerTintColor: '#fff',
+            }}
+          />
+          <Stack.Screen
+            name="Tabs"
+            component={Tabs}
+            options={{
+              headerShown: false,
+              title: 'Tabs',
+              headerStyle: {
+                backgroundColor: 'black',
+                borderBottomColor: 'black'
+              
+              },
+              headerTintColor: '#fff',
+            }}
+          />
+  
+        </Stack.Navigator>
+  
+        
+  
+    )
+  
+  }
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+    <NavigationContainer>
+      <StackNav/>
+    </NavigationContainer>
+   
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
