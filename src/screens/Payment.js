@@ -10,6 +10,7 @@ import {
     Alert,
     Image,
     TouchableOpacity,
+    ViewComponent,
 
 } from 'react-native';
 
@@ -73,7 +74,7 @@ export default function Payment ({ navigation }) {
 
 
     return (
-        <div>
+        <View>
               <Input placeholder="Credit Number" />
                 <Input placeholder="Credit Pin" />
                 <Input placeholder="Amount"  value={payload.amount} onChangeText={handleChange("amount")}/>
@@ -81,7 +82,7 @@ export default function Payment ({ navigation }) {
                 <TouchableOpacity style={styles.buttonPay}>
                     <Text style={styles.btntext} onPress={botPay}> Pay</Text>
                 </TouchableOpacity>
-        </div>
+        </View>
     )
 }
 
