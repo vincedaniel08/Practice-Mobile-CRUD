@@ -17,7 +17,7 @@ function Tabs() {
   return (
 
     <Tab.Navigator initialRouteName="Home"
-      activeColor="#e64d3b"
+      activeColor="#efab07"
       inactiveColor="gray"
       barStyle={{ backgroundColor: 'black' }}>
 
@@ -30,15 +30,7 @@ function Tabs() {
           ),
         }}
       />
-      <Tab.Screen name="Discover"
-        component={Discover}
-        options={{
-
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="compass" color={color} size={26} />
-          ),
-        }}
-      />
+      
 
       <Tab.Screen name="Profile"
         component={Profile}

@@ -3,6 +3,7 @@ import firebase from "../utils/firebase";
 import { Surface } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Ionicons';
+import { Input } from 'react-native-elements';
 
 import {
     View,
@@ -22,7 +23,7 @@ import {
 export default function Profile({ navigation }) {
 
     var user = firebase.auth().currentUser;
-    var email,displayName, photoUrl;
+    var email, displayName, photoUrl;
 
     if (user != null) {
 
@@ -51,6 +52,8 @@ export default function Profile({ navigation }) {
 
 
     }
+
+   
 
     const renderOption = (icon, name, count) => {
         return (
@@ -83,10 +86,7 @@ export default function Profile({ navigation }) {
                     </View>
                 </View>
                 <View style={styles.divider} />
-                {renderOption('music', 'Songs', 20)}
-                {renderOption('playlist-music', 'Playlist', 25)}
-                {renderOption('album', 'Albums', 10)}
-                {renderOption('download', 'Downloads', 10)}
+               
                 <View style={styles.divider} />
 
 
@@ -146,6 +146,26 @@ const styles = StyleSheet.create({
 
 
     },
+
+    buttonPay: {
+        height: 50,
+        backgroundColor: '#e64d3b',
+        padding: 5,
+        marginBottom: 2,
+        borderRadius: 20,
+        width: '90%',
+        marginStart: 20,
+        position: 'relative',
+        textAlign: 'center',
+        padding: 10,
+        marginBottom: 4,
+        height: 45,
+        borderRadius: 30,
+
+
+
+    },
+
 
     btntext: {
         color: 'white',

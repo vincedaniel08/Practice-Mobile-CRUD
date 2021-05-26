@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 import Menu from "./src/screens/Menu";
+import Payment from "./src/screens/Payment";
 import Login from "./src/screens/Login";
 import Registration from "./src/screens/Registration";
 import ForgotPassword from "./src/screens/ForgotPassword";
@@ -90,6 +91,21 @@ function StackNav() {
           headerTintColor: '#fff',
         }}
       />
+
+<Stack.Screen
+        name="Payment"
+        component={Payment}
+        options={{
+          title: '',
+          headerStyle: {
+            backgroundColor: 'black',
+            borderBottomColor: 'black'
+
+          },
+          headerTintColor: '#fff',
+        }}
+      />
+
 
       
 

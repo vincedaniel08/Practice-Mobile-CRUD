@@ -8,7 +8,33 @@ import firebase from "../utils/firebase";
 export default function SocialIcons({ navigation }) {
 
   const botgoogle = () => {
-   navigation.navigate('Tabs');
+
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    firebase.auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+            /** @type {firebase.auth.OAuthCredential} */
+            var credential = result.credential;
+
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            navigation.navigate('Tabs')
+           
+            // ...
+        }).catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            alert(errorCode,email,credential,errorMessage);
+        });
 }
 
 const botfacebook = () => {
@@ -90,8 +116,7 @@ const botgithub = () => {
       <View style={{ flex: 1, flexDirection: 'row' }}>
               <View style={{ flexDirection: 'column' }}>
                 <SocialIcon
-                button
-
+            
             
                   type="facebook"
                   onPress={() => {

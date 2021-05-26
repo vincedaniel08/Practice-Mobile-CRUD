@@ -16,8 +16,8 @@ export default function Menu({ navigation }) {
         <Image source={require('../Images/adaptive-icon.png')}
         style={{width: 300, height: 300 , marginTop: -90}} />
 
-        <Text style={styles.text}> Million of song.</Text>
-        <Text style={styles.text}> Free on Reverb</Text>
+        <Text style={styles.text}> There Are Limits</Text>
+        <Text style={styles.text}> To What A Solo Player Can Do</Text>
         <TouchableOpacity style={styles.button}>
 
       <Text style={styles.btntext} onPress={() => navigation.navigate('Sign In')} > SIGN IN</Text>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 
     button:{
         height: 50,
-        backgroundColor: '#e64d3b',
+        backgroundColor: '#efab07',
         padding: 5,
         borderRadius: 20,
         marginTop: 17,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
       text:{
 
         color: 'white',
-        fontSize: 40,
+        fontSize: 30,
         marginBottom: 5,
        
         
