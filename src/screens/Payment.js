@@ -65,6 +65,21 @@ export default function Payment ({ navigation }) {
               ); 
             }
 
+            else{
+              alert(
+                "Unsucessful Transact:\n Due inadequate balance  \n"
+                + "balance: " + payload.amount,
+              
+               
+                
+                [
+                 
+                  { text: "OK", onPress: () => console.log("OK Pressed") }
+                ]
+                
+              ); 
+            }
+
         }
 
       
